@@ -13,6 +13,7 @@ from jobspy.indeed import Indeed
 from jobspy.linkedin import LinkedIn
 from jobspy.naukri import Naukri
 from jobspy.hellowork import HelloWork
+from jobspy.solidjobs import SolidJobs
 from jobspy.ziprecruiter import ZipRecruiter
 from jobspy.model import JobType, Location, JobResponse, Country, ExperienceRange, RemoteType
 from jobspy.model import SalarySource, ScraperInput, Site
@@ -66,7 +67,8 @@ def scrape_jobs(
         Site.BAYT: BaytScraper,
         Site.NAUKRI: Naukri,
         Site.BDJOBS: BDJobs,  # Add BDJobs to the scraper mapping
-        Site.HELLOWORK: HelloWork
+        Site.HELLOWORK: HelloWork,
+        Site.SOLIDJOBS: SolidJobs,
     }
     set_logger_level(verbose)
     job_type = get_enum_from_job_type(job_type) if job_type else None
